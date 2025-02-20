@@ -11,28 +11,33 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('profile') }}" aria-expanded="false">
+{{--                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('profile') }}" aria-expanded="false">--}}
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="" aria-expanded="false">
+
                         <i class="mdi mdi-account-network"></i>
                         <span class="hide-menu">Profile</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('country')}}" aria-expanded="false">
-                        <i class="mdi mdi-border-none"></i>
+{{--                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('country')}}" aria-expanded="false">--}}
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="" aria-expanded="false">
+                    <i class="mdi mdi-border-none"></i>
                         <span class="hide-menu">Country</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('category')}}" aria-expanded="false">
+{{--                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('category')}}" aria-expanded="false">--}}
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="" aria-expanded="false">
                         <i class="mdi mdi-border-none"></i>
                         <span class="hide-menu">Category</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('brand')}}" aria-expanded="false">
+{{--                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('brand')}}" aria-expanded="false">--}}
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="" aria-expanded="false">
                         <i class="mdi mdi-border-none"></i>
                         <span class="hide-menu">Brand</span>
                     </a>
@@ -46,7 +51,7 @@
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('blog.index')}}" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="" aria-expanded="false">
                         <i class="mdi mdi-arrange-bring-forward"></i>
                         <span class="hide-menu">Blog</span>
                     </a>
