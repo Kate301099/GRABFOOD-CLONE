@@ -12,4 +12,9 @@ class UserController extends Controller
         $data=Auth::user();
         return view('admin.user.profile',compact('data'));
     }
+
+    public function update(Request $request) {
+        //
+    }
+
 }
