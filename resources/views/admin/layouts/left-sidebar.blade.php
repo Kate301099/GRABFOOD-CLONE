@@ -11,8 +11,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-{{--                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('profile') }}" aria-expanded="false">--}}
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('profile') }}" aria-expanded="false">
 
                         <i class="mdi mdi-account-network"></i>
                         <span class="hide-menu">Profile</span>

@@ -8,7 +8,14 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function dashboard() {
-        return view('admin.dashboard.dashboard');
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function dashboard()
+    {
+        $data = Auth::user();
+        return view('admin.dashboard.dashboard', compact('data'));
     }
 }
