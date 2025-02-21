@@ -24,7 +24,7 @@ class UpdateProfileRequest extends FormRequest
         return [
             'name' => 'nullable|string|max:20',
             'email' => 'nullable|string|max:50|email',
-            'password' => 'nullable|string|min:8|max:20',
+            'password' => 'nullable|string|min:3|max:20',
             'phone' => 'nullable|string',
 //            'id_country' => 'nullable|not_in:Please select',
             'address' => 'nullable|string|max:100',
