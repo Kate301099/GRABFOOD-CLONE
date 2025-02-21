@@ -32,9 +32,9 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th width="300px" scope="col">Id</th>
-                                <th width="300px" scope="col">Country</th>
-                                <th width="300px" scope="col">Action</th>
+                                <th width="300px" scope="col">ID</th>
+                                <th width="300px" scope="col">COUNTRY</th>
+                                <th width="300px" scope="col">ACTION</th>
 
                             </tr>
                             </thead>
@@ -43,8 +43,8 @@
                                 <tr>
                                     <td>{{$country->id }}</td>
                                     <td>{{$country->country}}</td>
-                                    <td><a href="{{route('country.edit',$country->id )}}">Edit</a></td>
-                                    <td><a href="{{route('country.delete',$country->id )}}">Delete</a></td>
+                                    <td><a href="{{route('country.show',['country'=>$country->id] )}}">Edit</a></td>
+                                    <td><a href="{{route('country.destroy',['country'=>$country->id] )}}">Delete</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -57,7 +57,7 @@
                     </div>
 
                 </div>
-                <button style="background-color:lightgreen;color:white;padding:15px;border:none"><a href="{{route('country.add')}}">ADD COUNTRY </a></button>
+                <button style="background-color:lightgreen;color:white;padding:15px;border:none"><a href="{{route('country.create')}}">ADD COUNTRY </a></button>
             </div>
 
             @if(session('success'))

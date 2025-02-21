@@ -22,14 +22,13 @@
                 <div class="col-lg-8 col-xlg-9 col-md-7">
                     <div class="card">
                         <div class="card-body">
-                            <form id="form" class="form-horizontal form-material" method="post">
+                            <form id="form" class="form-horizontal form-material" action="{{route('country.update',['country'=>$country->id])}}" method="post>
                                 @csrf
+                                @method('PUT')
                                 <div class="form-group">
-                                    @foreach($country as $value)
-                                        <label class="col-md-12">NEW COUNTRY ID :{{$value->id}}</label>
+                                        <label class="col-md-12">NEW COUNTRY ID :{{$country->id}}</label>
                                         <div class="col-md-12">
-                                            <input type="text" value="{{$value->country}}" name="country" class="form-control form-control-line">
-                                            @endforeach
+                                            <input type="text" value="{{$country->country}}" name="country" class="form-control form-control-line">
                                         </div>
                                 </div>
                                 <div class="form-group">
@@ -38,7 +37,7 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
+                    </div>
                     </div>
                 </div>
 
@@ -70,27 +69,27 @@
 
 @endsection
 
-@section('script')
-    <script>
-        $(document).ready(function() {
-            $('.edit-country').click(function (e) {
-                e.preventDefault();
+{{--@section('script')--}}
+{{--    <script>--}}
+{{--        $(document).ready(function() {--}}
+{{--            $('.edit-country').click(function (e) {--}}
+{{--                e.preventDefault();--}}
 
-                $.ajax({
-                    type: "POST",
-                    url: '{{ route('api.country.update', ['id' => $country[0]->id]) }}',
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                        country: $('input[name=country]').val()
-                    },
-                    success: function(res) {
-                        alert(res.message)
-                    },
-                    error: function(err) {
-                        alert(JSON.parse(err.responseText, null, 2).message)
-                    },
-                });
-            });
-        });
-    </script>
-@endsection
+{{--                $.ajax({--}}
+{{--                    type: "POST",--}}
+{{--                    url: '{{ route('country.update', ['id' => $country[0]->id]) }}',--}}
+{{--                    data: {--}}
+{{--                        _token: '{{ csrf_token() }}',--}}
+{{--                        country: $('input[name=country]').val()--}}
+{{--                    },--}}
+{{--                    success: function(res) {--}}
+{{--                        alert(res.message)--}}
+{{--                    },--}}
+{{--                    error: function(err) {--}}
+{{--                        alert(JSON.parse(err.responseText, null, 2).message)--}}
+{{--                    },--}}
+{{--                });--}}
+{{--            });--}}
+{{--        });--}}
+{{--    </script>--}}
+{{--@endsection--}}

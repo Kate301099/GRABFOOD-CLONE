@@ -20,7 +20,7 @@
                 <div class="col-lg-8 col-xlg-9 col-md-7">
                     <div class="card">
                         <div class="card-body">
-                            <form class="form-horizontal form-material" action="{{route('country.addPost')}}" method="post">
+                            <form class="form-horizontal form-material" action="{{route('country.store')}}" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label class="col-md-12">NEW COUNTRY</label>
