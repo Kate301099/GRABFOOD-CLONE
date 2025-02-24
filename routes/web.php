@@ -35,6 +35,9 @@ Route::get('/grabfood/login',[App\Http\Controllers\website\LoginController::clas
 
 //USER REGISTER
 Route::get('/grabfood/register',[App\Http\Controllers\website\RegisterController::class,'index'])->name('user.register');
+Route::post('/grabfood/register',[App\Http\Controllers\website\RegisterController::class,'store'])->name('user.register-store');
+
+
 
 
 

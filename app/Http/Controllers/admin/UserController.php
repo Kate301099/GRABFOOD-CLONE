@@ -20,7 +20,7 @@ class UserController extends Controller
     public function update(UpdateProfileRequest $request) {
         $user = Auth::user();
 
-        $data=$request->all();
+        $data=$request->validated();
 
         $file=$request->file('avatar');
 

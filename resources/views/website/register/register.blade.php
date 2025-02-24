@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="signup-form">
-                        <form class=" signup-form form-horizontal form-material" method="post" enctype="multipart/form-data">
+                        <form class=" signup-form form-horizontal form-material" method="post" action="{{route('user.register-store')}}" enctype="multipart/form-data">
                             @csrf
                             <h2>New User Signup!</h2>
 
