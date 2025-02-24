@@ -31,10 +31,10 @@
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
-                            <tr>
-                                <th width="300px" scope="col">ID</th>
-                                <th width="300px" scope="col">COUNTRY</th>
-                                <th width="300px" scope="col">ACTION</th>
+                            <tr >
+                                <th width="300px" style="font-weight: bold" scope="col">ID</th>
+                                <th width="300px" style="font-weight: bold" scope="col">COUNTRY</th>
+                                <th width="300px" style="font-weight: bold" scope="col">ACTION</th>
 
                             </tr>
                             </thead>
@@ -43,8 +43,18 @@
                                 <tr>
                                     <td>{{$country->id }}</td>
                                     <td>{{$country->country}}</td>
-                                    <td><a href="{{route('country.show',['country'=>$country->id] )}}">Edit</a></td>
-                                    <td><a href="{{route('country.destroy',['country'=>$country->id] )}}">Delete</a></td>
+                                    <td>
+                                        <a href="{{route('country.show',['country'=>$country->id] )}}">
+                                            <button style="padding:3px 10px"> Edit</button>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <form action="{{ route('country.destroy', ['country' => $country->id]) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this country?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

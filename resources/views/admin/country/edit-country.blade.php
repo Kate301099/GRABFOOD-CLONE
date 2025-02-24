@@ -22,7 +22,7 @@
                 <div class="col-lg-8 col-xlg-9 col-md-7">
                     <div class="card">
                         <div class="card-body">
-                            <form id="form" class="form-horizontal form-material" action="{{route('country.update',['country'=>$country->id])}}" method="post>
+                            <form id="form" class="form-horizontal form-material" action="{{route('country.update',['country'=>$country->id])}}" method="post">
                                 @csrf
                                 @method('PUT')
                                 <div class="form-group">
