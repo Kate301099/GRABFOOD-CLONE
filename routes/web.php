@@ -30,5 +30,12 @@ Route::middleware([\App\Http\Middleware\AdminRole::class])->group(function () {
 
 Route::get('/web',function () {    return view('website.hehe');});
 
+//USER LOGIN
+Route::get('/grabfood/login',[App\Http\Controllers\website\LoginController::class,'index'])->name('user.login');
+
+//USER REGISTER
+Route::get('/grabfood/register',[App\Http\Controllers\website\RegisterController::class,'index'])->name('user.register');
+
+
 
 

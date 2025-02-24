@@ -21,7 +21,10 @@
 <body>
 @include('website.layouts.header')
 
-@include('website.layouts.slide-bar')
+
+@if(!request()->routeIs(['user.*']))
+    @include('website.layouts.slide-bar')
+@endif
 
 <section>
     <div class="container">

@@ -13,8 +13,13 @@
         </ul>
 
         <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2">Login</button>
-            <button type="button" class="btn btn-primary">Sign-up</button>
+            <a href="{{route('user.login')}}">
+                <button type="button" class="btn btn-outline-primary me-2">Login</button>
+            </a>
+
+            <a href="{{route('user.register')}}">
+                <button type="button" class="btn btn-primary">Sign-up</button>
+            </a>
         </div>
     </header>
 </div>
