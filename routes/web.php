@@ -32,6 +32,10 @@ Route::get('/web',function () {    return view('website.hehe');});
 
 //USER LOGIN
 Route::get('/grabfood/login',[App\Http\Controllers\website\LoginController::class,'index'])->name('user.login');
+Route::post('/grabfood/login',[App\Http\Controllers\website\LoginController::class,'login'])->name('user.login-submit');
+
+//USER LOGOUT
+Route::get('/grabfood/logout',[App\Http\Controllers\website\LogoutController::class,'logout'])->name('user.logout');
 
 //USER REGISTER
 Route::get('/grabfood/register',[App\Http\Controllers\website\RegisterController::class,'index'])->name('user.register');

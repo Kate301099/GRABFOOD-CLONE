@@ -1,6 +1,7 @@
 @extends('website.layouts.app')
 
 @section('content')
+    @if(!session('user_id'))
     <section id="form"><!--form-->
         <div class="container">
             <div class="row">
@@ -23,14 +24,19 @@
         </div>
         </div>
     </section><!--/form-->
-
-    @if(session('success'))
-        <div class="alert alert-success alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
-            <h4><i class="icon fa fa-check"></i>Inform!</h4>
-            {{session('success')}}
-        </div>
     @endif
+
+    @if(session('user_id'))
+        <h2>LOGIN SUCCESSFULLY , MOVE TO <a href="">YOUR ACCOUNT !!!</a></h2>
+        @endif
+
+{{--    @if(session('success'))--}}
+{{--        <div class="alert alert-success alert-dismissible">--}}
+{{--            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>--}}
+{{--            <h4><i class="icon fa fa-check"></i>Inform!</h4>--}}
+{{--            {{session('success')}}--}}
+{{--        </div>--}}
+{{--    @endif--}}
 
     @if($errors->any())
         <div class="alert alert-success alert-dismissible">

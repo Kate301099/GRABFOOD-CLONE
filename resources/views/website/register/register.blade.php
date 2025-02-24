@@ -75,7 +75,13 @@
             </div>
         </div>
         </div>
+
+        @if(session('success'))
+            <a href="{{route('user.login')}}"><button style="background-color: forestgreen">GO TO LOGIN PAGE !!!</button></a>
+        @endif
+
     </section><!--/form-->
+
 
     @if(session('success'))
         <div class="alert alert-success alert-dismissible">
