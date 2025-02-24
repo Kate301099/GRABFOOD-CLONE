@@ -36,12 +36,25 @@
 <!-- footer  -->
 @include('website.layouts.footer')
 
-<script src="{{asset('frontend/js/jquery.js')}}"></script>
-<script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('frontend/js/jquery.scrollUp.min.js')}}"></script>
-<script src="{{asset('frontend/js/price-range.js')}}"></script>
-<script src="{{asset('frontend/js/jquery.prettyPhoto.js')}}"></script>
-<script src="{{asset('frontend/js/main.js')}}"></script>
+{{--<script src="{{asset('frontend/js/jquery.js')}}"></script>--}}
+{{--<script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>--}}
+{{--<script src="{{asset('frontend/js/jquery.scrollUp.min.js')}}"></script>--}}
+{{--<script src="{{asset('frontend/js/price-range.js')}}"></script>--}}
+{{--<script src="{{asset('frontend/js/jquery.prettyPhoto.js')}}"></script>--}}
+{{--<script src="{{asset('frontend/js/main.js')}}"></script>--}}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const myCarousel = document.querySelector('#carouselExampleIndicators');
+        const carousel = new bootstrap.Carousel(myCarousel, {
+            wrap: true
+        });
+    });
+</script>
+
+
 
 @yield('script')
 </body>
