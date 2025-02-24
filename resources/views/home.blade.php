@@ -17,6 +17,9 @@
                     {{ __('You are logged in!') }}
                 </div>
             </div>
+            <div>
+                <a href="{{route('dashboard')}}"><button>GO TO DASHBOARD</button></a>
+            </div>
         </div>
     </div>
 </div>

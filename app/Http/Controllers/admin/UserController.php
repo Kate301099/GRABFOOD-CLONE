@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateProfileRequest;
+use App\Models\Country;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
@@ -11,8 +12,9 @@ class UserController extends Controller
 {
     public function index()
     {
+        $countries = Country::all();
         $data=Auth::user();
-        return view('admin.user.profile',compact('data'));
+        return view('admin.user.profile',compact('data','countries'));
     }
 
     public function update(UpdateProfileRequest $request) {

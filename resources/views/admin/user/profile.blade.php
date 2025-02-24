@@ -110,16 +110,16 @@
                                     </div>
                                 </div>
 
-{{--                                <div class="form-group">--}}
-{{--                                    <label class="col-sm-12">Select Country</label>--}}
-{{--                                    <div class="col-sm-12">--}}
-{{--                                        <select name="id_country" class="form-control form-control-line">--}}
-{{--                                            @foreach($countries as $country)--}}
-{{--                                                <option value="{{$country->id}}" @if($data['id_country']===$country->id)selected @endif>{{$country->country}}</option>--}}
-{{--                                            @endforeach--}}
-{{--                                        </select>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
+                                <div class="form-group">
+                                    <label class="col-sm-12">Select Country</label>
+                                    <div class="col-sm-12">
+                                        <select name="id_country" class="form-control form-control-line">
+                                            @foreach($countries as $country)
+                                                <option value="{{$country->id}}" @if($data['id_country']===$country->id)selected @endif>{{$country->country}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
 
                                 <div class="form-group">
                                     <div class="col-sm-12">
