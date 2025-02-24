@@ -26,3 +26,9 @@ Route::middleware([\App\Http\Middleware\AdminRole::class])->group(function () {
 });
 
 
+// WEBSITE
+
+Route::get('/web',function () {    return view('website.hehe');});
+
+
+
