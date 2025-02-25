@@ -5,7 +5,7 @@
 @endsection
 
     @section('content')
-    @if(!session('user_id'))
+    @if(!auth()->user())
     <section id="form"><!--form-->
         <div class="container">
             <div class="row">
@@ -30,7 +30,7 @@
     </section><!--/form-->
     @endif
 
-    @if(session('user_id'))
+    @if(auth()->user())
         <h2>LOGIN SUCCESSFULLY , MOVE TO <a href="{{route('user.account-index')}}">YOUR ACCOUNT !!!</a></h2>
         @endif
 

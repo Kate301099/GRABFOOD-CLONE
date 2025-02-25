@@ -21,8 +21,9 @@
                         <h4 class="panel-title"><a href="">My product</a></h4>
                     </div>
                 </div>
-                <form action="">
-                    <a href=""><button>DELETE ACCOUNT</button></a>
+                <form method="post" action="{{route('user.account-destroy')}}" onsubmit="return confirm('Are you sure you want to delete this account?')">
+                    @method('DELETE')
+                   <button type="submit">DELETE ACCOUNT</button>
                 </form>
 
             </div><!--/category-products-->

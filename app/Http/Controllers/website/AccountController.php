@@ -48,4 +48,9 @@ class AccountController extends Controller
 
     }
 
+    public function destroy() {
+        Auth::logout();
+        return redirect()->route('user.login');
+    }
+
 }

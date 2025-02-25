@@ -24,11 +24,7 @@ class LoginController extends Controller
         }
 
         if (Auth::attempt(['email' => $loginData['email'], 'password' => $loginData['password']], $remember)) {
-            $user_id = Auth::user()->id;
-            return redirect()->back()->with(
-                ['success' => 'You are now logged in',
-                    'user_id' => $user_id,
-                ]);
+            return redirect()->back()->with('success', 'Login Successful');
         } else {
             return redirect()->back()->withErrors(['error' => 'Wrong Email or Password']);
         }

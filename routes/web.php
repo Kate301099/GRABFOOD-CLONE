@@ -44,6 +44,7 @@ Route::post('/grabfood/register',[App\Http\Controllers\website\RegisterControlle
 //USER ACCOUNT
 Route::get('/grapfood/account',[App\Http\Controllers\website\AccountController::class,'index'])->name('user.account-index');
 Route::post('/grapfood/account',[App\Http\Controllers\website\AccountController::class,'update'])->name('user.account-update');
+Route::delete('grapfood/account',[App\Http\Controllers\website\AccountController::class,'destroy'])->name('user.account-destroy');
 
 
 
