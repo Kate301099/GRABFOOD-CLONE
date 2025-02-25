@@ -31,7 +31,7 @@
     @endif
 
     @if(session('user_id'))
-        <h2>LOGIN SUCCESSFULLY , MOVE TO <a href="">YOUR ACCOUNT !!!</a></h2>
+        <h2>LOGIN SUCCESSFULLY , MOVE TO <a href="{{route('user.account-index')}}">YOUR ACCOUNT !!!</a></h2>
         @endif
 
 {{--    @if(session('success'))--}}

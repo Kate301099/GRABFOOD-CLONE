@@ -37,7 +37,9 @@ class UserController extends Controller
         $data['avatar'] = $data['avatar'] ?? $user->avatar;
 
         if($user->update($data)) {
-            $request->file('avatar')->storePubliclyAs('admin/avatar', $file->getClientOriginalName(),'public');
+            if($request->hasFile('avatar')){
+                $request->file('avatar')->storePubliclyAs('admin/avatar', $file->getClientOriginalName(),'public');
+            }
             return redirect()->back()->with('success', __('Update Profile Success!'));
         }else {
             return redirect()->back()->withErrors(__('Update Profile Fail!'));

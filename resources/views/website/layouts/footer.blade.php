@@ -1,5 +1,5 @@
-<div class="container">
-    <footer class="py-5">
+<div class="container" >
+    <footer class="py-5"  >
         <div class="row">
             <div class="col-2">
                 <h5>Section</h5>
