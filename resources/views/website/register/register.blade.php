@@ -1,5 +1,10 @@
 @extends('website.layouts.app')
 
+@section('head')
+    <title>GRABFOOD-REGISTER</title>
+@endsection
+
+
 @section('content')
 
     <section id="form"><!--form-->

@@ -1,6 +1,10 @@
 @extends('website.layouts.app')
 
-@section('content')
+@section('head')
+    <title>GRABFOOD-LOGIN</title>
+@endsection
+
+    @section('content')
     @if(!session('user_id'))
     <section id="form"><!--form-->
         <div class="container">

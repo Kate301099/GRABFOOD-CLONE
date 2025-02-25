@@ -11,8 +11,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware([\App\Http\Middleware\AdminRole::class])->group(function () {
+//DASHBOARD
     Route::get('/admin/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'dashboard'])->name('dashboard');
-
+// ADMIN PROFILE
     Route::get('/admin/profile', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('profile');
     Route::post('/admin/profile', [App\Http\Controllers\Admin\UserController::class, 'update'])->name('profile.edit');
 
@@ -27,7 +28,6 @@ Route::middleware([\App\Http\Middleware\AdminRole::class])->group(function () {
 
 
 // WEBSITE
-
 Route::get('/web',function () {    return view('website.hehe');});
 
 //USER LOGIN
