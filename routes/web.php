@@ -29,9 +29,9 @@ Route::middleware([\App\Http\Middleware\AdminRole::class])->group(function () {
 
 // WEBSITE
 
-Route::get('/grapfood',[App\Http\Controllers\website\OptionController::class,'index'])->name('grapfood');
-Route::get('/grapfood/option/login',[App\Http\Controllers\website\OptionController::class,'login'])->name('option.login');
-Route::get('/grapfood/option/register',[App\Http\Controllers\website\OptionController::class,'register'])->name('option.register');
+Route::get('/grabfood',[App\Http\Controllers\website\OptionController::class,'index'])->name('grabfood');
+Route::get('/grabfood/option/login',[App\Http\Controllers\website\OptionController::class,'login'])->name('option.login');
+Route::get('/grabfood/option/register',[App\Http\Controllers\website\OptionController::class,'register'])->name('option.register');
 
 
 
@@ -47,9 +47,9 @@ Route::get('/grabfood/user/register',[App\Http\Controllers\website\RegisterContr
 Route::post('/grabfood/user/register',[App\Http\Controllers\website\RegisterController::class,'store'])->name('user.register-store');
 
 //USER ACCOUNT
-Route::get('/grapfood/user/account',[App\Http\Controllers\website\AccountController::class,'index'])->name('user.account-index');
-Route::put('/grapfood/user/account',[App\Http\Controllers\website\AccountController::class,'update'])->name('user.account-update');
-Route::delete('grapfood/user/account',[App\Http\Controllers\website\AccountController::class,'destroy'])->name('user.account-destroy');
+Route::get('/grabfood/user/account',[App\Http\Controllers\website\AccountController::class,'index'])->name('user.account-index');
+Route::put('/grabfood/user/account',[App\Http\Controllers\website\AccountController::class,'update'])->name('user.account-update');
+Route::delete('grabfood/user/account',[App\Http\Controllers\website\AccountController::class,'destroy'])->name('user.account-destroy');
 
 
 

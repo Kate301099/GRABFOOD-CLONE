@@ -17,12 +17,12 @@ class OptionController extends Controller
 
     public function login()
     {
-       return view('website.grapfood-login-option');
+       return view('website.grabfood-login-option');
     }
 
     public function register()
     {
-        return view('website.grapfood-register-option');
+        return view('website.grabfood-register-option');
     }
 
 }
