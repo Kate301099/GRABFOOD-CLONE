@@ -1,19 +1,18 @@
 @extends('website.layouts.app')
 
 @section('head')
-    <title>GRABFOOD-REGISTER(USER)</title>
+    <title>GRABFOOD-REGISTER(STORE)</title>
 @endsection
 
 
 @section('content')
-
-    @if(!session('success'))
+@if(!session('success'))
     <section id="form"><!--form-->
         <div class="container ">
             <div class="row">
                 <div class="col-sm-4">
                     <div class="signup-form">
-                        <form class=" signup-form form-horizontal form-material" method="post" action="{{route('user.register-store')}}" enctype="multipart/form-data">
+                        <form class=" signup-form form-horizontal form-material" method="post" action="{{route('store.register-submit')}}" enctype="multipart/form-data">
                             @csrf
                             <h2>New User Signup!</h2>
 
@@ -81,12 +80,11 @@
             </div>
         </div>
         </div>
-
     </section><!--/form-->
     @endif
 
     @if(session('success'))
-        <a href="{{route('user.login')}}"><button style="background-color: forestgreen">GO TO LOGIN PAGE !!!</button></a>
+        <a href="{{route('store.login')}}">GO TO LOGIN PAGE !!!</a>
     @endif
 
 

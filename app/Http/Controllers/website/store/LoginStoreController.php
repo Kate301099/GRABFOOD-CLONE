@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\website;
+namespace App\Http\Controllers\website\store;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\website\UserLoginRequest;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
+class LoginStoreController extends Controller
 {
     public function index()
     {
-        return view('website.login.login');
+        return view('website.store.store-login');
     }
 
     public function login(UserLoginRequest $request)
@@ -24,7 +24,7 @@ class LoginController extends Controller
         }
 
         if (Auth::attempt(['email' => $loginData['email'], 'password' => $loginData['password']], $remember)) {
-            if(Auth::user()->role==='1') {
+            if(Auth::user()->role === '2') {
                 return redirect()->back()->with('success', 'Login Successful');
             } else {
                 Auth::logout();
@@ -34,4 +34,5 @@ class LoginController extends Controller
             return redirect()->back()->withErrors(['error' => 'Wrong Email or Password']);
         }
     }
+
 }

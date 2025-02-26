@@ -1,7 +1,7 @@
 @extends('website.layouts.app')
 
 @section('head')
-    <title>GRABFOOD-LOGIN</title>
+    <title>GRABFOOD-LOGIN(USER)</title>
 @endsection
 
     @section('content')

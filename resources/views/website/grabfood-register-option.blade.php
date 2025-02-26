@@ -5,6 +5,6 @@
 
     <div>
         <a href="{{route('user.register')}}"><button>REGISTER AS USER</button></a>
-        <a href=""><button>REGISTER AS STORE</button></a> <br>
+        <a href="{{route('store.register')}}"><button>REGISTER AS STORE</button></a> <br>
     </div>
 @endsection

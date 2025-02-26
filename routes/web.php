@@ -51,6 +51,18 @@ Route::get('/grabfood/user/account',[App\Http\Controllers\website\AccountControl
 Route::put('/grabfood/user/account',[App\Http\Controllers\website\AccountController::class,'update'])->name('user.account-update');
 Route::delete('grabfood/user/account',[App\Http\Controllers\website\AccountController::class,'destroy'])->name('user.account-destroy');
 
+//***************
+
+//STORE LOGIN
+Route::get('/grabfood/store/login',[App\Http\Controllers\website\store\LoginStoreController::class,'index'])->name('store.login');
+Route::post('/grabfood/store/login',[App\Http\Controllers\website\store\LoginStoreController::class,'login'])->name('store.login-submit');
+
+//STORE REGISTER
+Route::get('/grabfood/store/register',[App\Http\Controllers\website\store\RegisterStoreController::class,'index'])->name('store.register');
+Route::post('/grabfood/store/register',[App\Http\Controllers\website\store\RegisterStoreController::class,'store'])->name('store.register-submit');
+
+
+
 
 
 

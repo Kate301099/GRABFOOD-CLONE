@@ -19,6 +19,6 @@ class AdminRole
         if (Auth::check() && Auth::user()->role === '0') {
             return $next($request);
         };
-        return redirect()->route('/home');
+        return redirect()->route('home');
     }
 }

@@ -22,7 +22,7 @@
 @include('website.layouts.header')
 
 
-@if(!request()->routeIs(['user.*','option.*']))
+@if(!request()->routeIs(['user.*','option.*','store.*']))
     @include('website.layouts.slide-bar')
 @endif
 

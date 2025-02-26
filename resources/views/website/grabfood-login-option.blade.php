@@ -5,6 +5,6 @@
 
     <div>
         <a href="{{route('user.login')}}"><button>LOG IN AS USER</button></a>
-        <a href=""><button>LOG IN AS STORE</button></a> <br>
+        <a href="{{route('store.login')}}"><button>LOG IN AS STORE</button></a> <br>
     </div>
 @endsection
