@@ -28,23 +28,28 @@ Route::middleware([\App\Http\Middleware\AdminRole::class])->group(function () {
 
 
 // WEBSITE
-Route::get('/web',function () {    return view('website.hehe');});
+
+Route::get('/grapfood',[App\Http\Controllers\website\OptionController::class,'index'])->name('grapfood');
+Route::get('/grapfood/option/login',[App\Http\Controllers\website\OptionController::class,'login'])->name('option.login');
+Route::get('/grapfood/option/register',[App\Http\Controllers\website\OptionController::class,'register'])->name('option.register');
+
+
 
 //USER LOGIN
-Route::get('/grabfood/login',[App\Http\Controllers\website\LoginController::class,'index'])->name('user.login');
-Route::post('/grabfood/login',[App\Http\Controllers\website\LoginController::class,'login'])->name('user.login-submit');
+Route::get('/grabfood/user/login',[App\Http\Controllers\website\LoginController::class,'index'])->name('user.login');
+Route::post('/grabfood/user/login',[App\Http\Controllers\website\LoginController::class,'login'])->name('user.login-submit');
 
 //USER LOGOUT
-Route::get('/grabfood/logout',[App\Http\Controllers\website\LogoutController::class,'logout'])->name('user.logout');
+Route::get('/grabfood/user/logout',[App\Http\Controllers\website\LogoutController::class,'logout'])->name('user.logout');
 
 //USER REGISTER
-Route::get('/grabfood/register',[App\Http\Controllers\website\RegisterController::class,'index'])->name('user.register');
-Route::post('/grabfood/register',[App\Http\Controllers\website\RegisterController::class,'store'])->name('user.register-store');
+Route::get('/grabfood/user/register',[App\Http\Controllers\website\RegisterController::class,'index'])->name('user.register');
+Route::post('/grabfood/user/register',[App\Http\Controllers\website\RegisterController::class,'store'])->name('user.register-store');
 
 //USER ACCOUNT
-Route::get('/grapfood/account',[App\Http\Controllers\website\AccountController::class,'index'])->name('user.account-index');
-Route::post('/grapfood/account',[App\Http\Controllers\website\AccountController::class,'update'])->name('user.account-update');
-Route::delete('grapfood/account',[App\Http\Controllers\website\AccountController::class,'destroy'])->name('user.account-destroy');
+Route::get('/grapfood/user/account',[App\Http\Controllers\website\AccountController::class,'index'])->name('user.account-index');
+Route::put('/grapfood/user/account',[App\Http\Controllers\website\AccountController::class,'update'])->name('user.account-update');
+Route::delete('grapfood/user/account',[App\Http\Controllers\website\AccountController::class,'destroy'])->name('user.account-destroy');
 
 
 

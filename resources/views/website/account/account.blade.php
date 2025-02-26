@@ -13,15 +13,11 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4 class="panel-title"><a href="">account</a></h4>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title"><a href="">My product</a></h4>
+                        <h4 class="panel-title"><a href="{{route('user.account-index')}}">account</a></h4>
                     </div>
                 </div>
                 <form method="post" action="{{route('user.account-destroy')}}" onsubmit="return confirm('Are you sure you want to delete this account?')">
+                    @csrf
                     @method('DELETE')
                    <button type="submit">DELETE ACCOUNT</button>
                 </form>
@@ -39,6 +35,7 @@
 
                 <form class="form-horizontal form-material" method="post" action="{{route('user.account-update')}}" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="form-group">
                         <label class="col-md-12">Full Name</label>
                         <div class="col-md-12">

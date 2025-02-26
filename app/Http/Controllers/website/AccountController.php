@@ -49,6 +49,7 @@ class AccountController extends Controller
     }
 
     public function destroy() {
+        Auth::user()->delete();
         Auth::logout();
         return redirect()->route('user.login');
     }
