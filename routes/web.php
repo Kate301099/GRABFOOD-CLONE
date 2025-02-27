@@ -18,6 +18,7 @@ Route::prefix('admin')->group(function(){
     Route::get('customers', fn()=>'demo')->name('admin.customers');
     Route::get('managers', fn () => 'demo');
     Route::get('stores', fn () => 'demo');
+    Route::get('reviews',fn() => 'demo');
     Route::get('products', fn () => 'demo');
     Route::get('customer-addresses', fn () => 'demo');
     Route::get('genders', fn () => 'demo');
