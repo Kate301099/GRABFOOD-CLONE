@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('password');
             $table->string('phone');
             $table->string('avatar')->nullable();
-//            $table->foreignId('country_id')->constrained();
 //            $table->foreignId('store_id')->constrained();
             $table->rememberToken();
             $table->timestamps();

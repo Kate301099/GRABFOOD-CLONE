@@ -11,18 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreignId('country_id')->after('avatar')->constrained();
-        });
 
         Schema::table('customers', function (Blueprint $table) {
-            $table->foreignId('country_id')->after('avatar')->constrained();
-            $table->foreignId('gender_id')->after('country_id')->constrained();
+            $table->foreignId('gender_id')->after('avatar')->constrained();
         });
 
         Schema::table('managers', function (Blueprint $table) {
-            $table->foreignId('country_id')->after('avatar')->constrained();
-            $table->foreignId('store_id')->after('country_id')->constrained();
+            $table->foreignId('store_id')->after('avatar')->constrained();
         });
 
         Schema::table('stores', function (Blueprint $table) {
@@ -55,10 +50,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropColumns('users','country_id');
-        Schema::dropColumns('customers','country_id');
         Schema::dropColumns('customers','gender_id');
-        Schema::dropColumns('managers','country_id');
         Schema::dropColumns('managers','store_id');
         Schema::dropColumns('stores','category_id');
         Schema::dropColumns('products','store_id');

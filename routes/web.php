@@ -63,9 +63,21 @@ Route::post('/grabfood/store/register',[App\Http\Controllers\website\store\Regis
 
 
 
+//********
 
+Route::prefix('admin')->group(function(){
+    Route::get('dashboard',fn()=>'demo')->name('admin.dashboard');
+// ADMIN PROFILE
+    Route::get('profile', fn()=>'demo')->name('admin.profile');
+//    Route::post('profile', [App\Http\Controllers\Admin\UserController::class, 'update'])->name('profile.edit');
 
-
-
+//COUNTRY
+    Route::get('country', [App\Http\Controllers\Admin\CountryController::class, 'index'])->name('country.index');
+    Route::get('country/create', [App\Http\Controllers\Admin\CountryController::class, 'create'])->name('country.create');
+    Route::post('country', [App\Http\Controllers\Admin\CountryController::class, 'store'])->name('country.store');
+    Route::get('country/{country}', [App\Http\Controllers\Admin\CountryController::class, 'show'])->name('country.show');
+    Route::put('country/{country}', [App\Http\Controllers\Admin\CountryController::class, 'update'])->name('country.update');
+    Route::delete('country/{country}', [App\Http\Controllers\Admin\CountryController::class, 'destroy'])->name('country.destroy');
+});
 
 
