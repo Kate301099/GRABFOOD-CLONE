@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
 //            $table->foreignId('customer_id')->constrained();
 //            $table->foreignId('store_id')->constrained();
-            $table->string('total_price');
             $table->timestamps();
         });
     }

@@ -32,12 +32,13 @@ Route::prefix('manager')->group(function(){
     Route::get('account', fn () => 'demo');
     Route::get('stores', fn () => 'demo');
     Route::get('store/{store}/review', fn () => 'demo');
+    Route::get('store/{store}/review/{review}/reply', fn () => 'demo');
     Route::get('products', fn () => 'demo');
     Route::get('orders', fn () => 'demo');
     Route::get('order-items', fn () => 'demo');
 });
 
-Route::prefix('grapfood')->group(function(){
+Route::prefix('grabfood')->group(function(){
     Route::get('account', fn () => 'demo');
     Route::get('addresses', fn () => 'demo');
     Route::get('history-order', fn () => 'demo');
@@ -45,6 +46,8 @@ Route::prefix('grapfood')->group(function(){
     Route::get('orders/{order}', fn () => 'demo');
     Route::get('stores/{store}', fn () => 'demo');
     Route::get('stores/{store}/reviews', fn () => 'demo');
+    Route::get('stores/{store}/review', fn () => 'demo');// review
+
 });
 
 

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('address');
-//            $table->foreignId('category_id')->constrained();
-            $table->integer('total_orders');
+            $table->string('phone');
+            // brand_id
             $table->timestamps();
         });
     }
