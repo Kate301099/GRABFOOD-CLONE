@@ -30,6 +30,7 @@ Route::prefix('manager')->group(function(){
     Route::get('managers-list', fn () => 'demo');
     Route::get('account', fn () => 'demo');
     Route::get('stores', fn () => 'demo');
+    Route::get('store/{store}/review', fn () => 'demo');
     Route::get('products', fn () => 'demo');
     Route::get('orders', fn () => 'demo');
     Route::get('order-items', fn () => 'demo');
