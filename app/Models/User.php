@@ -50,4 +50,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function country(): BelongsTo
+    {
+        return $this->belongsTo(Country::class, 'id_country');
+    }
+
 }
