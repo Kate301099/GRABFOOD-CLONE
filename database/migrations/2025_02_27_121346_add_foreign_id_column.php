@@ -59,17 +59,17 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropColumns('managers', 'brand_id');
-        Schema::dropColumns('stores', 'brand_id');
-        Schema::dropColumns('products', 'brand_id');
-        Schema::dropColumns('addresses', 'customer_id');
-        Schema::dropColumns('orders', 'customer_id');
-        Schema::dropColumns('orders', 'store_id');
-        Schema::dropColumns('order_items', 'order_id');
-        Schema::dropColumns('order_items', 'offer_id');
-        Schema::dropColumns('reviews', 'customer_id');
-        Schema::dropColumns('reviews', 'store_id');
-        Schema::dropColumns('brands', 'category_id');
         Schema::dropColumns('offers', 'product_id');
+        Schema::dropColumns('brands', 'category_id');
+        Schema::dropColumns('reviews', 'store_id');
+        Schema::dropColumns('reviews', 'customer_id');
+        Schema::dropColumns('order_items', 'offer_id');
+        Schema::dropColumns('order_items', 'order_id');
+        Schema::dropColumns('orders', 'store_id');
+        Schema::dropColumns('orders', 'customer_id');
+        Schema::dropColumns('addresses', 'customer_id');
+        Schema::dropColumns('products', 'brand_id');
+        Schema::dropColumns('stores', 'brand_id');
+        Schema::dropColumns('managers', 'brand_id');
     }
 };
