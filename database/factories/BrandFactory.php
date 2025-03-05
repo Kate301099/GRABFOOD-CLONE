@@ -17,8 +17,8 @@ class BrandFactory extends Factory
     public function definition(): array
     {
         return [
-//            'name' => $this->faker->name(),
-//            'category_id' => Category::factory(),
+            'name' => $this->faker->unique()->randomElement(['Jollibee','Pho Co','HuaCha','Túc Tắc Tea','Táo Bakery',
+                'Anh Quân Bakery', 'Hana Coffee','Happy Burrito']),
         ];
     }
 }

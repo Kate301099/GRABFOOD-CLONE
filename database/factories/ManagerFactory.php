@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Brand;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -17,13 +18,17 @@ class ManagerFactory extends Factory
      */
     public function definition(): array
     {
+        $name = $this->faker->name();
+        $userName = strtolower(str_replace(' ','.',$name));
+
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'name' => $name,
+            'email' => $userName . '@gmail.com',
             'email_verified_at' => now(),
-            'phone'=>fake()->phoneNumber(),
+            'phone'=>$this->faker->numerify('+84########'),
 //            'password' => static::$password ??= Hash::make('password'),
             'password' => '111',
+            'brand_id' =>fake(Brand::class),
             'remember_token' => Str::random(10),
         ];
     }

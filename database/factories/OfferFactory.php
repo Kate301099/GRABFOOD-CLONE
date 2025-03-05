@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,10 +17,20 @@ class OfferFactory extends Factory
      */
     public function definition(): array
     {
+        $productIds = Product::query()->pluck('id')->toArray();
+
+        shuffle($productIds);
+
+        $offers = [
+            'spicy', 'no spicy', 'size M' ,'size L' ,'size XL' ,'size XXL', 'with cream','no cream'
+        ];
+
+        $name = $this->faker->randomElement($offers);
+
         return [
-//            'product_id'
-//            'name'
-//            'price'
+            'product_id' => $productIds[0],
+            'name' =>$name,
+            'price'=>$this->faker->randomFloat(2,0,1000),
         ];
     }
 }

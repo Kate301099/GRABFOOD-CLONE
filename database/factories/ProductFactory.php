@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Brand;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,11 +18,26 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
+        $brandId = Brand::query()->inRandomOrder()->first()->id;
+
+        $foods = [ 'Fried Chicken', 'Tuna Salad', 'Spaghetti Bolognese',
+            'Vegetable Stir-fry',
+            'Cheeseburger', 'Grilled Salmon', 'Chicken Alfredo', 'Beef Burritos',
+            'Mushroom Risotto', 'Vegetarian Pizza', 'Chicken Caesar Salad',
+            'BBQ Ribs', 'Fish Tacos', 'Lamb Chops', 'Pasta Primavera',
+            'Caesar Salad', 'Greek Salad', 'Fruit Salad', 'Cobb Salad',
+            'Pasta Salad', 'Potato Salad', 'Caprese Salad', 'Asian Noodle Salad',
+            'Lemonade', 'Iced Tea', 'Smoothie', 'Milkshake', 'Fruit Juice',
+            'Coffee', 'Iced Coffee', 'Sparkling Water', 'Soda', 'Mocktail'];
+
+
+        $name = $this->faker->unique()->randomElement($foods);
+
         return [
-            'name' => fake()->name(),
+            'name' => $name,
             'image'=>'product2.jpeg',
             'description' => fake()->text(),
-            'brand_id'=>fake()->numberBetween(1,10),
+            'brand_id'=>$brandId,
         ];
     }
 }

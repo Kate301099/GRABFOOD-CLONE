@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Manager extends Model
 {
@@ -30,5 +31,10 @@ class Manager extends Model
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function brand(): BelongsTo
+    {
+       return $this->belongsTo(Brand::class);
     }
 }

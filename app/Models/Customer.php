@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Customer extends Model
 {
@@ -33,4 +34,20 @@ class Customer extends Model
             'password' => 'hashed',
         ];
     }
+
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function addresses():HasMany
+    {
+        return $this->hasMany(Address::class);
+    }
+
+    public function reviews():hasMany
+    {
+        return $this->hasMany(Review::class);
+    }
+
 }

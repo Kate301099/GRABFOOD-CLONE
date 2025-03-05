@@ -17,10 +17,12 @@ return new class extends Migration
 
         Schema::table('stores', function (Blueprint $table) {
             $table->foreignId('brand_id')->after('phone')->constrained();
+            $table->unique(['name','brand_id']);
         });
 
         Schema::table('products', function (Blueprint $table) {
             $table->foreignId('brand_id')->after('image')->constrained();
+            $table->unique(['name','brand_id']);
         });
 
         Schema::table('addresses', function (Blueprint $table) {
@@ -42,15 +44,9 @@ return new class extends Migration
             $table->foreignId('store_id')->after('customer_id')->constrained();
         });
 
-
-        Schema::table('brands', function (Blueprint $table) {
-            $table->foreignId('category_id')->after('name')->constrained();
-        });
-
         Schema::table('offers', function (Blueprint $table) {
             $table->foreignId('product_id')->after('id')->constrained();
         });
-
 
     }
 
@@ -60,7 +56,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropColumns('offers', 'product_id');
-        Schema::dropColumns('brands', 'category_id');
         Schema::dropColumns('reviews', 'store_id');
         Schema::dropColumns('reviews', 'customer_id');
         Schema::dropColumns('order_items', 'offer_id');

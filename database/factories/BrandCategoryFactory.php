@@ -2,13 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Store;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Review>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Brand_Category>
  */
-class ReviewFactory extends Factory
+class BrandCategoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,9 +17,8 @@ class ReviewFactory extends Factory
     public function definition(): array
     {
         return [
-            'customer_id' => fake(Customer::class),
-            'store_id'=> fake(Store::class),
-            'review'=>$this->faker->realText(),
+//         'brand_id',
+//            'category_id',
         ];
     }
 }

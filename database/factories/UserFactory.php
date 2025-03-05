@@ -23,9 +23,12 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $name = $this->faker->name();
+        $userName = strtolower(str_replace(' ', '.', $name));
+
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'name' => $name,
+            'email' => $userName . '@gmail.com',
             'email_verified_at' => now(),
 //            'password' => static::$password ??= Hash::make('password'),
             'password' => '111',
