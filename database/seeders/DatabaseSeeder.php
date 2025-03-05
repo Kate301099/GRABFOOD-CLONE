@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
 //        User::factory()->count(1)->create();
 
-        $this->call(ReviewSeeder::class);
+//        $this->call(OrderItemSeeder::class);
 
     }
 }

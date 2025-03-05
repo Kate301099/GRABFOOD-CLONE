@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div>
-                <a href="{{route('dashboard')}}"><button>GO TO DASHBOARD</button></a>
+                <a href="{{route('admin.dashboard')}}"><button>GO TO DASHBOARD</button></a>
             </div>
         </div>
     </div>

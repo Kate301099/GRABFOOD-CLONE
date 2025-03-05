@@ -4,26 +4,26 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('dashboard') }}" aria-expanded="false">
+                <li class="sidebar-item" style="margin-top: 20px">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.dashboard') }}" aria-expanded="false">
                         <i class="mdi mdi-av-timer"></i>
                         <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('profile') }}" aria-expanded="false">
-
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.profile') }}" aria-expanded="false">
                         <i class="mdi mdi-account-network"></i>
                         <span class="hide-menu">Profile</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('country.index')}}" aria-expanded="false">
-                    <i class="mdi mdi-border-none"></i>
-                        <span class="hide-menu">Country</span>
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.customers') }}" aria-expanded="false">
+                        <i class="mdi mdi-account-network"></i>
+                        <span class="hide-menu">Customer</span>
                     </a>
                 </li>
+
 
                 <li class="sidebar-item">
 {{--                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('category')}}" aria-expanded="false">--}}

@@ -1,4 +1,8 @@
 @extends('admin.layouts.app')
+
+@section('head')
+    <tit>ADMIN-PROFILE</tit>
+    @endsection
 @section('content')
     <!-- Page wrapper  -->
     <div class="page-wrapper">
@@ -33,9 +37,9 @@
                 <div class="col-lg-4 col-xlg-3 col-md-5">
                     <div class="card">
                         <div class="card-body">
-                            <center class="m-t-30"> <img style="width: 130px;height:130px" src="{{asset('storage/admin/avatar')}}/{{$data['avatar']}}" class="rounded-circle" />
-                                <h4 class="card-title m-t-10">{{$data['name']}}</h4>
-                                <h6 class="card-subtitle">Accounts Manager Amix corp</h6>
+                            <center class="m-t-30"> <img style="width: 130px;height:130px" src="" alt="ADMIN" class="rounded-circle" />
+                                <h4 class="card-title m-t-10">{{$user['name']}}</h4>
+                                <h6 class="card-subtitle">Grapfood-clone Admin</h6>
                                 <div class="row text-center justify-content-md-center">
                                     <div class="col-4"><a href="javascript:void(0)" class="link"><i class="icon-people"></i>
                                             <font class="font-medium">254</font>
@@ -50,9 +54,7 @@
                             <hr>
                         </div>
                         <div class="card-body"> <small class="text-muted">Email address </small>
-                            <h6>{{$data['email']}}</h6> <small class="text-muted p-t-30 db">Phone</small>
-                            <h6>+{{$data['phone']}}</h6> <small class="text-muted p-t-30 db">Address</small>
-                            <h6>{{$data['address']}}</h6>
+                            <h6>{{$user['email']}}</h6>
                             <div class="map-box">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d470029.1604841957!2d72.29955005258641!3d23.019996818380896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C+Gujarat!5e0!3m2!1sen!2sin!4v1493204785508" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div> <small class="text-muted p-t-30 db">Social Profile</small>
@@ -68,12 +70,12 @@
                 <div class="col-lg-8 col-xlg-9 col-md-7">
                     <div class="card">
                         <div class="card-body">
-                            <form class="form-horizontal form-material" method="post" enctype="multipart/form-data">
+                            <form class="form-horizontal form-material" action="{{route('admin.profile-update')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label class="col-md-12">Full Name</label>
                                     <div class="col-md-12">
-                                        <input type="text" value="{{$data['name']}}" name="name" class="form-control form-control-line">
+                                        <input type="text" value="{{$user['name']}}" name="name" class="form-control form-control-line">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -86,38 +88,6 @@
                                     <label class="col-md-12">Password</label>
                                     <div class="col-md-12">
                                         <input type="password" name="password" class="form-control form-control-line">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-12">Phone</label>
-                                    <div class="col-md-12">
-                                        <input type="text" name="phone" class="form-control form-control-line">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-12">Address</label>
-                                    <div class="col-md-12">
-                                        <textarea rows="5" name="address" class="form-control form-control-line"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-12">Avatar</label>
-                                    <div class="col-md-12">
-                                        <input type="file" name="avatar" class="form-control form-control-line">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-sm-12">Select Country</label>
-                                    <div class="col-sm-12">
-                                        <select name="id_country" class="form-control form-control-line">
-                                            @foreach($countries as $country)
-                                                <option value="{{$country->id}}" @if($data['id_country']===$country->id)selected @endif>{{$country->country}}</option>
-                                            @endforeach
-                                        </select>
                                     </div>
                                 </div>
 

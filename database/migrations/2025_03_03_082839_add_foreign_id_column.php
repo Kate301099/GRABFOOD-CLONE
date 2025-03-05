@@ -45,7 +45,7 @@ return new class extends Migration
         });
 
         Schema::table('offers', function (Blueprint $table) {
-            $table->foreignId('product_id')->after('id')->constrained();
+            $table->foreignId('product_id')->after('id')->constrained()->onDelete('cascade');
         });
 
     }

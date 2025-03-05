@@ -13,15 +13,20 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //******** ADMIN
 
 Route::prefix('admin')->group(function(){
-    Route::get('dashboard',fn()=>'demo')->name('admin.dashboard');
-    Route::get('profile', fn()=>'demo')->name('admin.profile');
-    Route::get('customers', fn()=>'demo')->name('admin.customers');
+    Route::get('dashboard',[App\Http\Controllers\admin\DashboardController::class, 'dashboard'])->name('admin.dashboard');
+
+    Route::get('profile',[App\Http\Controllers\admin\UserController::class, 'index'])->name('admin.profile');
+    Route::post('profile',[App\Http\Controllers\admin\UserController::class, 'update'])->name('admin.profile-update');
+
+    Route::get('customers',[App\Http\Controllers\admin\CustomerController::class, 'index'])->name('admin.customers');
+    Route::delete('customers/{customer}',[App\Http\Controllers\admin\CustomerController::class, 'destroy'])->name('admin.customers-destroy');
+
+
     Route::get('managers', fn () => 'demo');
     Route::get('stores', fn () => 'demo');
     Route::get('reviews',fn() => 'demo');
     Route::get('products', fn () => 'demo');
     Route::get('customer-addresses', fn () => 'demo');
-    Route::get('genders', fn () => 'demo');
     Route::get('orders', fn () => 'demo');
     Route::get('categories', fn () => 'demo');
 });

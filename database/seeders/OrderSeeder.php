@@ -21,7 +21,7 @@ class OrderSeeder extends Seeder
         shuffle($customerIds);
         shuffle($storeIds);
 
-        Order::factory()->count(5)->create( function () use ($customerIds, $storeIds) {
+        Order::factory()->count(20)->create( function () use ($customerIds, $storeIds) {
             $randomCustomerId = $customerIds[array_rand($customerIds)];
             $randomStoreId = $storeIds[array_rand($storeIds)];
          return [

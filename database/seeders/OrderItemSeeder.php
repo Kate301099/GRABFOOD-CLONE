@@ -18,7 +18,7 @@ class OrderItemSeeder extends Seeder
         $orderIds = Order::query()->pluck('id')->toArray();
         $offers = Offer::query()->pluck('price','id')->toArray();
 
-        OrderItem::factory()->count(5)->create(function () use ($orderIds, $offers) {
+        OrderItem::factory()->count(20)->create(function () use ($orderIds, $offers) {
             $randomOrderId = $orderIds[array_rand($orderIds)];
 
             $randomOfferId = array_rand($offers);
